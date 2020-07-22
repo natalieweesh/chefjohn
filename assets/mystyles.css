@@ -35,14 +35,8 @@ header {
   width: 90%;
 }
 
-.mousse {
-  display: block;
-  margin: 2rem auto;
-  max-width: 95%;
-}
-
 .contact {
-  margin: 0 auto 2rem;
+  margin: 4rem auto 6rem;
   text-align: center;
 }
 
