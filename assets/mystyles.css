@@ -58,6 +58,7 @@ button:hover {
   margin: 0.25rem;
   border: 0;
   outline: 0;
+  font-size: 0.9rem;
   background: white;
   padding: 0.8rem;
   border: 2px solid #ecd7ff;
