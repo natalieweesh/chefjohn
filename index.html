@@ -1,0 +1,519 @@
+<html>
+  <head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">          
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/photoswipe.css">
+    <link rel="stylesheet" href="assets/default-skin.css">
+    <script src="assets/photoswipe.min.js" defer></script>
+    <script src="assets/photoswipe-ui-default.min.js" defer></script>
+
+    <link rel="stylesheet" href="assets/natural-gallery.css">
+    <link rel="stylesheet" href="assets/natural.css">
+    <script src="assets/natural-gallery.js" defer></script>
+    <link rel="stylesheet" href="assets/mystyles.css">
+  </head>
+  <body>
+    <header>
+      <div class="profile-pic"><img src="foodpics/profile.png" alt="john"/></div>
+      <h1 class="uppercase">Chef John</h1>
+      <h2 class="role">Executive Chef</h2>
+      <h2 class="role">Chef Consultant</h2>
+      <h2 class="role">Private Chef</h2>
+      <p class="description">Here are some of the dishes I've created as an executive chef and chef consultant at several different restaurants.</p>
+    </header>    
+
+    <div id="gallery"></div>
+
+    <video class="mousse" controls width="400" height="400">
+      <source src="foodpics/chocolatemousse.mp4" type="video/mp4">
+    </video>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+                <div class="pswp__preloader__icn">
+                    <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+              <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+          <div class="pswp__caption">
+              <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <script>
+      window.addEventListener('load', function() {
+
+        var options = {
+          rowHeight: 400,
+          lightbox: true,
+          rowsPerPage: 19,
+          gap: 10,
+          photoSwipeOptions: { loop: true }
+        };
+
+        var elementRef = document.getElementById('gallery');
+
+        var photoswipeRef = document.getElementsByClassName('pswp')[0];
+
+        var gallery = new NaturalGallery.Natural(elementRef, options, photoswipeRef);
+        gallery.init();
+
+        var items = [
+            {
+              thumbnailSrc: 'foodpics/peachsalad.png',
+              enlargedSrc: 'foodpics/peachsalad.png',
+              title: '<b>Spinach Salad</b><br/>Charred Peaches, Baby Beets, Gorgonzola, Bacon, Cherry Vinaigrette',
+              enlargedWidth: 2798,
+              enlargedHeight: 1838
+            },
+            {
+              thumbnailSrc: 'foodpics/panroastedsalmon.png',
+              enlargedSrc: 'foodpics/panroastedsalmon.png',
+              title: 'Pan Roasted Salmon<br/>Wild Salmon, Broccolini, Orange Honey Aioli, Roasted Maitake Mushrooms, Gremolata',
+              enlargedWidth: 1378,
+              enlargedHeight: 1836
+            },
+            {
+              thumbnailSrc: 'foodpics/prosciuttopizza.png',
+              enlargedSrc: 'foodpics/prosciuttopizza.png',
+              title: 'Fig & Prosciutto Pizza<br/>Sourdough Pizza Crust, Balsamic Compressed Figs, Asiago, Gorgonzola, San Danielle Prosciutto',
+              enlargedWidth: 1295,
+              enlargedHeight: 866
+            },
+            {
+              thumbnailSrc: 'foodpics/spinachravioli.jpg',
+              enlargedSrc: 'foodpics/spinachravioli.jpg',
+              title: 'Ricotta Spinach Ravioli',
+              enlargedWidth: 3000,
+              enlargedHeight: 2000
+            },
+            {
+              thumbnailSrc: 'foodpics/crudo.jpg',
+              enlargedSrc: 'foodpics/crudo.jpg',
+              title: 'Crudo<br/>Halibut, Blood Orange Gel, Lemon Puree, Cucumber Cilantro Jus',
+              enlargedWidth: 1024,
+              enlargedHeight: 683
+            },
+            {
+              thumbnailSrc: 'foodpics/blackbass.png',
+              enlargedSrc: 'foodpics/blackbass.png',
+              title: 'Charred Black Bass<br/>Kumquat, Fennel, Arugula Salad, Orange Gastrique',
+              enlargedWidth: 1059,
+              enlargedHeight: 1098
+            },
+            {
+              thumbnailSrc: 'foodpics/lobsterthermidor.jpeg',
+              enlargedSrc: 'foodpics/lobsterthermidor.jpeg',
+              title: 'Lobster Thermidor with Roasted Brussels and Mustard Jus',
+              enlargedWidth: 1282,
+              enlargedHeight: 1920
+            },
+            {
+              thumbnailSrc: 'foodpics/beetsalad.jpg',
+              enlargedSrc: 'foodpics/beetsalad.jpg',
+              title: 'Beet Salad<br/>Heirloom Beets, Fried Goat Cheese, Lemon Vinaigrette, Microcress',
+              enlargedWidth: 1110,
+              enlargedHeight: 1600
+            },
+            {
+              thumbnailSrc: 'foodpics/millecrepe.jpg',
+              enlargedSrc: 'foodpics/millecrepe.jpg',
+              title: 'Mille Crepe<br/>Orange Vanilla Crepe, Orange Mousse, Chocolate Glaze, Cassis Sorbet',
+              enlargedWidth: 1600,
+              enlargedHeight: 1073
+            },
+            {
+              thumbnailSrc: 'foodpics/orakingsalmon.jpg',
+              enlargedSrc: 'foodpics/orakingsalmon.jpg',
+              title: 'Ora King Salmon<br/>Roasted Mushrooms, Spring Peas, Spring Onions',
+              enlargedWidth: 2680,
+              enlargedHeight: 1844
+            },
+            {
+              thumbnailSrc: 'foodpics/roastedsquash.jpg',
+              enlargedSrc: 'foodpics/roastedsquash.jpg',
+              title: 'Roasted Squash<br/>Delicata Squash, Butternut Squash, Wildflower Honey, Goat Cheese, Roasted Hazelnuts',
+              enlargedWidth: 1024,
+              enlargedHeight: 683
+            },
+            {
+              thumbnailSrc: 'foodpics/tunatartare.jpg',
+              enlargedSrc: 'foodpics/tunatartare.jpg',
+              title: 'Tuna Tartare<br/>Yellowfin Tuna, Potato Crisp, Grapefruit Jus, Chive Oil',
+              enlargedWidth: 1024,
+              enlargedHeight: 683
+            },
+            {
+              thumbnailSrc: 'foodpics/agnolotti.jpg',
+              enlargedSrc: 'foodpics/agnolotti.jpg',
+              title: 'Agnolotti<br/>Potato & Leek Filled Handmade Agnolotti, Parmesan',
+              enlargedWidth: 1024,
+              enlargedHeight: 683
+            },
+            {
+              thumbnailSrc: 'foodpics/crudo2.png',
+              enlargedSrc: 'foodpics/crudo2.png',
+              title: 'Crudo<br/>Mt. Lassen Trout, Orange Ginger Jus, Mint, Lemon Basil, Fresno Chili, Pickled Onion',
+              enlargedWidth: 1708,
+              enlargedHeight: 1140
+            },
+            {
+              thumbnailSrc: 'foodpics/bagel.jpg',
+              enlargedSrc: 'foodpics/bagel.jpg',
+              title: 'House Made Bagel & Lox<br/>House Made Everything Bagel, House Cured Lox, Cream Cheese, Capers, Red Onion',
+              enlargedWidth: 1600,
+              enlargedHeight: 1066
+            },
+            {
+              thumbnailSrc: 'foodpics/avocado.png',
+              enlargedSrc: 'foodpics/avocado.png',
+              title: 'Avocado Toast<br/>Smashed Avocadoes, Serrano Chili, Cherry Tomatoes, Feta, Watermelon Radish, Pumpkin Seeds, Poached Egg, Red Pepper Puree, Aged Balsamic',
+              enlargedWidth: 1125,
+              enlargedHeight: 1086
+            },
+            {
+              thumbnailSrc: 'foodpics/taleggio.jpg',
+              enlargedSrc: 'foodpics/taleggio.jpg',
+              title: 'Taleggio Arancini',
+              enlargedWidth: 2602,
+              enlargedHeight: 1844
+            },
+            {
+              thumbnailSrc: 'foodpics/burrata.png',
+              enlargedSrc: 'foodpics/burrata.png',
+              title: 'Burrata<br/>Roasted Peaches, Fresh Cherries, Raspberry Gastrique, Red Vein Sorrel',
+              enlargedWidth: 1708,
+              enlargedHeight: 1136
+            },
+            {
+              thumbnailSrc: 'foodpics/froglegs.jpeg',
+              enlargedSrc: 'foodpics/froglegs.jpeg',
+              title: 'Frog Legs with Roasted Sunchokes and Watercress Puree',
+              enlargedWidth: 1440,
+              enlargedHeight: 2158
+            },
+            {
+              thumbnailSrc: 'foodpics/salumi.png',
+              enlargedSrc: 'foodpics/salumi.png',
+              title: 'Salumi & Cheese Board',
+              enlargedWidth: 1704,
+              enlargedHeight: 1136
+            },
+            {
+              thumbnailSrc: 'foodpics/caesar.png',
+              enlargedSrc: 'foodpics/caesar.png',
+              title: 'Caesar Salad<br/>Focaccia Croutons, 6-Minute Egg, Parmesan, Anchovy, Caesar Dressing',
+              enlargedWidth: 1704,
+              enlargedHeight: 1134
+            },
+            {
+              thumbnailSrc: 'foodpics/kalesalad.png',
+              enlargedSrc: 'foodpics/kalesalad.png',
+              title: 'Kale Salad<br/>Strawberries, Goat Cheese, Spiced Candied Pecans, Balsamic Vinaigrette',
+              enlargedWidth: 1698,
+              enlargedHeight: 1132
+            },
+            {
+              thumbnailSrc: 'foodpics/artichokes.jpg',
+              enlargedSrc: 'foodpics/artichokes.jpg',
+              title: 'Artichokes Romana',
+              enlargedWidth: 2814,
+              enlargedHeight: 1500
+            },
+            {
+              thumbnailSrc: 'foodpics/margherita.png',
+              enlargedSrc: 'foodpics/margherita.png',
+              title: 'Margherita<br/>Sourdough Pizza Crust, San Marzano Tomato Sauce, Fresh Mozzarella, Basil',
+              enlargedWidth: 1402,
+              enlargedHeight: 950
+            },
+            {
+              thumbnailSrc: 'foodpics/calamari.png',
+              enlargedSrc: 'foodpics/calamari.png',
+              title: 'Calamari<br/>Semolina Crusted Calamari, Chili Aioli',
+              enlargedWidth: 1702,
+              enlargedHeight: 1130
+            },
+            {
+              thumbnailSrc: 'foodpics/asparagus.jpg',
+              enlargedSrc: 'foodpics/asparagus.jpg',
+              title: 'Asparagus with Buffalo Mozzarella',
+              enlargedWidth: 3000,
+              enlargedHeight: 1668
+            },
+            {
+              thumbnailSrc: 'foodpics/sausagepizza.png',
+              enlargedSrc: 'foodpics/sausagepizza.png',
+              title: 'Sausage Pizza<br/>Sourdough Pizza Crust, House Made Sausage, San Marzano Tomato Sauce, Fresh Moszarella',
+              enlargedWidth: 1104,
+              enlargedHeight: 1058
+            },
+            {
+              thumbnailSrc: 'foodpics/fettuccine.jpg',
+              enlargedSrc: 'foodpics/fettuccine.jpg',
+              title: 'Fettuccine with Black Truffle and Roasted Mushrooms<br/>Home-Made Gluten-Free Pasta',
+              enlargedWidth: 3000,
+              enlargedHeight: 1688
+            },
+            {
+              thumbnailSrc: 'foodpics/trufflepizza.png',
+              enlargedSrc: 'foodpics/trufflepizza.png',
+              title: 'Truffle Pizza<br/>Sourdough Pizza Crust, Truffle Puree, Roasted Wild Mushrooms, Asiago, Arugula, Parmesan',
+              enlargedWidth: 1006,
+              enlargedHeight: 988
+            },
+            {
+              thumbnailSrc: 'foodpics/margherita2.png',
+              enlargedSrc: 'foodpics/margherita2.png',
+              title: 'Margherita',
+              enlargedWidth: 962,
+              enlargedHeight: 990
+            },
+            {
+              thumbnailSrc: 'foodpics/broccolini.jpg',
+              enlargedSrc: 'foodpics/broccolini.jpg',
+              title: 'Broccolini Pizza<br/>Sourdough Pizza Crust, House Made Ricotta, Mozzarella, Oregano, Roasted Garlic, Rosemary Oil',
+              enlargedWidth: 2000,
+              enlargedHeight: 1333
+            },
+            {
+              thumbnailSrc: 'foodpics/pepperoni.png',
+              enlargedSrc: 'foodpics/pepperoni.png',
+              title: 'Pepperoni Pizza',
+              enlargedWidth: 1034,
+              enlargedHeight: 1306
+            },
+            {
+              thumbnailSrc: 'foodpics/oven.png',
+              enlargedSrc: 'foodpics/oven.png',
+              title: 'Pizza in the Oven',
+              enlargedWidth: 1690,
+              enlargedHeight: 1124
+            },
+            {
+              thumbnailSrc: 'foodpics/shakshuka.jpg',
+              enlargedSrc: 'foodpics/shakshuka.jpg',
+              title: 'Shakshuka',
+              enlargedWidth: 1080,
+              enlargedHeight: 1350
+            },
+            {
+              thumbnailSrc: 'foodpics/kobe.png',
+              enlargedSrc: 'foodpics/kobe.png',
+              title: 'Kobe Burger<br/>House Made Brioche, Crispy Fried Onions, House Made Pickles, Chipotle Aioli, Aged Cheddar, Wagyu Beef',
+              enlargedWidth: 1105,
+              enlargedHeight: 1090
+            },
+            {
+              thumbnailSrc: 'foodpics/friedchicken.png',
+              enlargedSrc: 'foodpics/friedchicken.png',
+              title: 'Buttermilk Fried Chicken<br/>House Made Hot Sauce, Maple, Kale Waffle',
+              enlargedWidth: 1076,
+              enlargedHeight: 1120
+            },
+            {
+              thumbnailSrc: 'foodpics/cappelletti.png',
+              enlargedSrc: 'foodpics/cappelletti.png',
+              title: 'Cappelletti<br/>House Made Ricotta, Pesto, Parmesan Tuile, Cherry Tomatoes',
+              enlargedWidth: 1096,
+              enlargedHeight: 1094
+            },
+            {
+              thumbnailSrc: 'foodpics/scallops.jpg',
+              enlargedSrc: 'foodpics/scallops.jpg',
+              title: 'Scallops<br/>Raspberry Gastrique, Urfa, Cucumber Sorbet, Red Shiso',
+              enlargedWidth: 1512,
+              enlargedHeight: 2016
+            },
+            {
+              thumbnailSrc: 'foodpics/confittuna.jpg',
+              enlargedSrc: 'foodpics/confittuna.jpg',
+              title: 'Confit Tuna with Fennel Citrus Salad',
+              enlargedWidth: 3000,
+              enlargedHeight: 1688
+            },
+            {
+              thumbnailSrc: 'foodpics/duck.jpeg',
+              enlargedSrc: 'foodpics/duck.jpeg',
+              title: 'Duck à l\'Orange<br/>Orange Chili Jus, Pommes Mousseline',
+              enlargedWidth: 801,
+              enlargedHeight: 1200
+            },
+            {
+              thumbnailSrc: 'foodpics/frenchtoast.jpg',
+              enlargedSrc: 'foodpics/frenchtoast.jpg',
+              title: 'French Toast<br/>House Made Brioche, Vanilla Orange Custard, House Made Vanilla Ice Cream, Maple',
+              enlargedWidth: 1600,
+              enlargedHeight: 1066
+            },
+            {
+              thumbnailSrc: 'foodpics/angus.jpg',
+              enlargedSrc: 'foodpics/angus.jpg',
+              title: 'Angus Prime Sirloin with Grilled Asparagus and Ramps',
+              enlargedWidth: 3000,
+              enlargedHeight: 1688
+            },
+            {
+              thumbnailSrc: 'foodpics/ribeye.jpg',
+              enlargedSrc: 'foodpics/ribeye.jpg',
+              title: 'Ribeye<br/>28 Day Aged Angus Ribeye, Cured Foie Gras, Herb Oil',
+              enlargedWidth: 1024,
+              enlargedHeight: 683
+            },
+            {
+              thumbnailSrc: 'foodpics/mousse.jpeg',
+              enlargedSrc: 'foodpics/mousse.jpeg',
+              title: 'Mankato Chocolate Mousse<br/>Chocolate Sorbet, Chocolate Crumble, Sour Cherry Purée',
+              enlargedWidth: 1200,
+              enlargedHeight: 801
+            },
+            {
+              thumbnailSrc: 'foodpics/chitarra.jpg',
+              enlargedSrc: 'foodpics/chitarra.jpg',
+              title: 'Seafood Chitarra<br/>Tomato Sauce, Littleneck Clams, Maine Lobster',
+              enlargedWidth: 1080,
+              enlargedHeight: 1080
+            },
+            {
+              thumbnailSrc: 'foodpics/cacio.jpg',
+              enlargedSrc: 'foodpics/cacio.jpg',
+              title: 'Cacio e Pepe Agnolotti',
+              enlargedWidth: 3000,
+              enlargedHeight: 1688
+            },
+            {
+              thumbnailSrc: 'foodpics/bomba.jpg',
+              enlargedSrc: 'foodpics/bomba.jpg',
+              title: 'Bomba with Vanilla Pastry Cream',
+              enlargedWidth: 3000,
+              enlargedHeight: 1688
+            },
+            {
+              thumbnailSrc: 'foodpics/gougeres.jpeg',
+              enlargedSrc: 'foodpics/gougeres.jpeg',
+              title: 'Roquefort Gougères with Champagne Grapes',
+              enlargedWidth: 1281,
+              enlargedHeight: 1920
+            },
+            {
+              thumbnailSrc: 'foodpics/mousse2.jpg',
+              enlargedSrc: 'foodpics/mousse2.jpg',
+              title: 'Chocolate Mousse<br/>Guanaja Chocolate Mousse, Ponzu Foam, Saffron Candied Buddha\'s Fingers, Chocolate Sorbet',
+              enlargedWidth: 2016,
+              enlargedHeight: 1512
+            },
+            {
+              thumbnailSrc: 'foodpics/crostada.jpg',
+              enlargedSrc: 'foodpics/crostada.jpg',
+              title: 'Plum Crostada Rustica',
+              enlargedWidth: 3000,
+              enlargedHeight: 1688
+            },
+            {
+              thumbnailSrc: 'foodpics/passionfruit.jpg',
+              enlargedSrc: 'foodpics/passionfruit.jpg',
+              title: 'Passionfruit Coconut Cake<br/>Passionfruit Buttercream, Coconut Macadamia Genoise, Coconut Tuile, Passionfruit Macaron',
+              enlargedWidth: 2016,
+              enlargedHeight: 1512
+            },
+            {
+              thumbnailSrc: 'foodpics/carrotcake.jpg',
+              enlargedSrc: 'foodpics/carrotcake.jpg',
+              title: 'Carrot Cake',
+              enlargedWidth: 1080,
+              enlargedHeight: 1080
+            },
+            {
+              thumbnailSrc: 'foodpics/sourdough.jpg',
+              enlargedSrc: 'foodpics/sourdough.jpg',
+              title: 'Sourdough English Muffins',
+              enlargedWidth: 1512,
+              enlargedHeight: 2016
+            },
+            {
+              thumbnailSrc: 'foodpics/sfogliatelle.jpg',
+              enlargedSrc: 'foodpics/sfogliatelle.jpg',
+              title: 'Sfogliatelle',
+              enlargedWidth: 2143,
+              enlargedHeight: 2306
+            },
+            {
+              thumbnailSrc: 'foodpics/avocado2.jpg',
+              enlargedSrc: 'foodpics/avocado2.jpg',
+              title: 'Avocado Toast',
+              enlargedWidth: 1066,
+              enlargedHeight: 1600
+            },
+            {
+              thumbnailSrc: 'foodpics/absinthe.png',
+              enlargedSrc: 'foodpics/absinthe.png',
+              title: 'Absinthe Sorbet<br/>Absinthe Sorbet with Lemon and Sparkling Wine',
+              enlargedWidth: 741,
+              enlargedHeight: 732
+            },
+            {
+              thumbnailSrc: 'foodpics/gin.png',
+              enlargedSrc: 'foodpics/gin.png',
+              title: 'Gin Honeybush Tea Cocktail',
+              enlargedWidth: 469,
+              enlargedHeight: 704
+            },
+            {
+              thumbnailSrc: 'foodpics/tequila.png',
+              enlargedSrc: 'foodpics/tequila.png',
+              title: 'Tequila Hibiscus Cocktail',
+              enlargedWidth: 580,
+              enlargedHeight: 639
+            },
+            {
+              thumbnailSrc: 'foodpics/jasmine.png',
+              enlargedSrc: 'foodpics/jasmine.png',
+              title: 'Jasmine Infused Whiskey Aperol Cocktail',
+              enlargedWidth: 587,
+              enlargedHeight: 602
+            },
+            {
+              thumbnailSrc: 'foodpics/watermelon.png',
+              enlargedSrc: 'foodpics/watermelon.png',
+              title: 'Watermelon Margarita',
+              enlargedWidth: 1082,
+              enlargedHeight: 1032
+            },
+            {
+              thumbnailSrc: 'foodpics/cucumber.png',
+              enlargedSrc: 'foodpics/cucumber.png',
+              title: 'Cucumber Tequila Cocktail',
+              enlargedWidth: 607,
+              enlargedHeight: 750
+            },
+        ];
+
+        gallery.setItems(items);
+      });
+    </script>
+  </body>
+</html>
