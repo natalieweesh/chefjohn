@@ -265,9 +265,10 @@
     text-align: left;
     max-width: 600px;
     margin: 0 auto;
-    font-size: 13px;
+    font-size: 14px;
     padding: 10px;
     line-height: 20px;
+    font-weight: 500;
     color: #CCC; }
   
   .pswp__caption--empty {
